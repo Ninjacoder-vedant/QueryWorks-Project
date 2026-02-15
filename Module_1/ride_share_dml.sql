@@ -1,3 +1,4 @@
+-- Members
 INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, BatchYear, Email, ContactNumber, Age, Gender) VALUES (28498438, 'Myra Khan', 'https://robohash.org/28498438.png?set=set4', 'M.Tech.', 'Computer Science and Engineering', 2029, 'myra.khan@iitgn.ac.in', '6371872528', 22, 'F');
 INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, BatchYear, Email, ContactNumber, Age, Gender) VALUES (28498439, 'Anaya Mehta', 'https://robohash.org/28498439.png?set=set4', 'M.Tech.', 'Integrated Circuit Design and Technology', 2029, 'anaya.mehta@iitgn.ac.in', '6157043256', 24, 'F');
 INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, BatchYear, Email, ContactNumber, Age, Gender) VALUES (28498440, 'Ayaan Nair', 'https://robohash.org/28498440.png?set=set4', 'PhD', 'Artificial Intelligence', 2026, 'ayaan.nair@iitgn.ac.in', '9965758745', 29, 'M');
@@ -29,6 +30,7 @@ INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, Bat
 INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, BatchYear, Email, ContactNumber, Age, Gender) VALUES (28498466, 'Reyansh Mishra', 'https://robohash.org/28498466.png?set=set4', 'B.Tech.', 'Computer Science and Engineering', 2028, 'reyansh.mishra@iitgn.ac.in', '7001045689', 23, 'M');
 INSERT INTO Members (MemberID, FullName, ProfileImageURL, Programme, Branch, BatchYear, Email, ContactNumber, Age, Gender) VALUES (28498467, 'Anaya Shah', 'https://robohash.org/28498467.png?set=set4', 'B.Tech.', 'Artificial Intelligence', 2028, 'anaya.shah@iitgn.ac.in', '8845782775', 22, 'F');
 
+-- MemberStats
 INSERT INTO MemberStats (MemberID, AverageRating, TotalRidesTaken, TotalRidesHosted, NumberOfRatings) VALUES (28498438, 3.43, 99, 1, 198);
 INSERT INTO MemberStats (MemberID, AverageRating, TotalRidesTaken, TotalRidesHosted, NumberOfRatings) VALUES (28498439, 4.67, 73, 54, 146);
 INSERT INTO MemberStats (MemberID, AverageRating, TotalRidesTaken, TotalRidesHosted, NumberOfRatings) VALUES (28498440, 3.06, 76, 1, 152);
@@ -61,7 +63,7 @@ INSERT INTO MemberStats (MemberID, AverageRating, TotalRidesTaken, TotalRidesHos
 INSERT INTO MemberStats (MemberID, AverageRating, TotalRidesTaken, TotalRidesHosted, NumberOfRatings) VALUES (28498467, 3.17, 132, 66, 264);
 
 
--- Vehichle Table
+-- Vehicles Table
 INSERT INTO Vehicles (VehicleID, VehicleType, MaxCapacity) 
 VALUES 
     (1, 'Bike', 1),
@@ -71,8 +73,6 @@ VALUES
     (5, 'SUV Cab', 6),
     (6, 'Premium SUV', 7);
 
--- ActiveRides Seed Data
--- Active Rides
 -- Active Rides
 INSERT INTO ActiveRides (RideID, AdminID, AvailableSeats, PassengerCount, Source, Destination, VehicleType, StartTime, EstimatedTime, FemaleOnly) VALUES ('dd1ee643-2f02-4546-977c-bc55fd4b55ea', 28498463, 1, 3, 'SVPI Airport', 'IIT Gandhinagar (Palaj)', 'Mini Cab', '2026-02-17 01:03:11', 74, TRUE);
 INSERT INTO ActiveRides (RideID, AdminID, AvailableSeats, PassengerCount, Source, Destination, VehicleType, StartTime, EstimatedTime, FemaleOnly) VALUES ('6e0180e5-20d9-4e12-872f-f6b45ef5cd82', 28498446, 0, 1, 'IIT Gandhinagar (Palaj)', 'IIT Gandhinagar (Palaj)', 'Bike', '2026-02-16 15:03:11', 81, FALSE);
@@ -196,59 +196,77 @@ INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('1aa9cfe
 INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('7dad019c-c58d-42db-be4f-9d7d794b57ed', 28498443, 'Plan Changed');
 INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('119fb431-101b-49d7-be17-92e9caab7c87', 28498448, 'Other private reasons');
 
--- INSERT INTO MessageHistory (MessageID, RideID, SenderID, MessageText, Timestamp) VALUES
--- (1, 101, 1, 'Hi, I have booked the ride. Are you near the pickup point?', '2026-02-10 09:00:00'),
--- (2, 101, 2, 'Yes, I am 2 minutes away. Please wait near the main gate.', '2026-02-10 09:02:00'),
--- (3, 102, 3, 'I have booked this shared ride. Is there space for one more bag?', '2026-02-10 10:15:00'),
--- (4, 103, 4, 'Yes, that is fine. I am starting from my location now.', '2026-02-10 11:00:00'),
--- (5, 104, 5, 'I am standing outside the mall entrance. Can you see me?', '2026-02-10 12:30:00'),
--- (6, 105, 6, 'I have reached the pickup spot. Please confirm your location.', '2026-02-10 13:10:00'),
--- (7, 106, 7, 'I just booked the ride. What is your exact pickup point?', '2026-02-10 14:00:00'),
--- (8, 107, 8, 'Let us meet near the petrol pump on the left side.', '2026-02-10 14:02:00'),
--- (9, 108, 9, 'Okay, I am on the way. I will be there in 5 minutes.', '2026-02-10 15:20:00'),
--- (10, 109, 10, 'I can see your car. Should I get in now?', '2026-02-10 16:00:00'),
--- (11, 110, 11, 'Yes, please get in. We will leave immediately.', '2026-02-10 17:10:00'),
--- (12, 111, 12, 'How long will it take to reach the destination?', '2026-02-10 18:00:00'),
--- (13, 112, 13, 'It should take around 30 minutes depending on traffic.', '2026-02-10 19:15:00'),
--- (14, 113, 14, 'Thanks for accepting my shared ride request.', '2026-02-10 20:00:00'),
--- (15, 114, 15, 'No problem, happy to share the ride with you!', '2026-02-10 21:00:00');
+Use rideshare;
+-- MessageHistory
+INSERT INTO MessageHistory (MessageID, RideID, SenderID, MessageText, Timestamp) VALUES
+(1,'dd1ee643-2f02-4546-977c-bc55fd4b55ea',28498463,'Hi, I have booked the ride. Are you near the pickup point?','2026-02-10 09:00:00'),
+(2,'6e0180e5-20d9-4e12-872f-f6b45ef5cd82',28498446,'Yes, I am 2 minutes away. Please wait near the main gate.','2026-02-10 09:02:00'),
+(3,'119fb431-101b-49d7-be17-92e9caab7c87',28498438,'I have booked this shared ride. Is there space for one more bag?','2026-02-10 10:15:00'),
+(4,'c409227a-e96e-4444-8749-15c2bd03d2ae',28498455,'Yes, that is fine. I am starting from my location now.','2026-02-10 11:00:00'),
+(5,'6f179c80-7958-4a77-b0fb-00d61de45087',28498445,'I am standing outside the mall entrance. Can you see me?','2026-02-10 12:30:00'),
+(6,'bc1f49d4-f927-4adf-97a8-86c33187bf44',28498459,'I have reached the pickup spot. Please confirm your location.','2026-02-10 13:10:00'),
+(7,'9735ef94-75bf-49ed-bb07-953d50455b23',28498438,'I just booked the ride. What is your exact pickup point?','2026-02-10 14:00:00'),
+(8,'4d54af73-b35e-4410-b352-f3eb42ebf559',28498438,'Let us meet near the petrol pump on the left side.','2026-02-10 14:02:00'),
+(9,'1aa9cfe1-5983-4e69-b836-f2dd09f29b7b',28498461,'Okay, I am on the way. I will be there in 5 minutes.','2026-02-10 15:20:00'),
+(10,'a1287b4e-2a85-444b-9813-c5a4759cce8c',28498439,'I can see your car. Should I get in now?','2026-02-10 16:00:00'),
+(11,'f29f6565-5bc4-495a-9878-4b91b3b876c3',28498452,'Yes, please get in. We will leave immediately.','2026-02-10 17:10:00'),
+(12,'2b1c3ff3-e65b-40d9-baa2-a294f843e35d',28498447,'How long will it take to reach the destination?','2026-02-10 18:00:00'),
+(13,'b83d9c8b-0278-4a57-9ba7-4b9673550776',28498459,'It should take around 30 minutes depending on traffic.','2026-02-10 19:15:00'),
+(14,'553aced0-6547-41e5-9aaa-26ddf8e769ed',28498442,'Thanks for accepting my shared ride request.','2026-02-10 20:00:00'),
+(15,'7dad019c-c58d-42db-be4f-9d7d794b57ed',28498464,'No problem, happy to share the ride with you!','2026-02-10 21:00:00'),
+(16,'7262c937-95e9-4526-9efc-1d2d65db305c',28498445,'I think Uber is better.','2026-02-12 09:00:00'),
+(17,'b6facd13-306b-4a00-9ef0-da8c342217a1',28498449,'Can we include I more member?','2026-02-12 09:05:00'),
+(18,'4ced265c-6fa0-4485-a41c-267d1b8c52bf',28498447,'Everyone please accecpt the request and comfirm the ride.','2026-02-12 09:10:00'),
+(19,'351d6041-9b8f-4b93-b3c8-613788d14dbe',28498443,'Everyone come near to Central Arcade, cab will be there at 5PM.','2026-02-12 09:15:00'),
+(20,'b673fea0-b774-41f3-9e76-2846183a7467',28498465,'Hello, I wanna go to Gandhinagar Capital Railway Station.','2026-02-12 09:20:00');
 
+-- Feedback
+INSERT INTO RideFeedback (RideID, MemberID, FeedbackText, FeedbackCategory, SubmittedAt) VALUES
+('dd1ee643-2f02-4546-977c-bc55fd4b55ea',28498463,'Very smooth ride.','Comfort','2026-02-11 09:00:00'),
+('6e0180e5-20d9-4e12-872f-f6b45ef5cd82',28498446,'Driver was punctual.','Punctuality','2026-02-11 09:10:00'),
+('119fb431-101b-49d7-be17-92e9caab7c87',28498438,'Felt safe throughout.','Safety','2026-02-11 09:20:00'),
+('c409227a-e96e-4444-8749-15c2bd03d2ae',28498455,'Car was clean.','Comfort','2026-02-11 09:30:00'),
+('6f179c80-7958-4a77-b0fb-00d61de45087',28498445,'Reached on time.','Punctuality','2026-02-11 09:40:00'),
+('bc1f49d4-f927-4adf-97a8-86c33187bf44',28498459,'Good driving skills.','Safety','2026-02-11 09:50:00'),
+('9735ef94-75bf-49ed-bb07-953d50455b23',28498438,'AC was not working.','Comfort','2026-02-11 10:00:00'),
+('4d54af73-b35e-4410-b352-f3eb42ebf559',28498438,'Driver polite and helpful.','Safety','2026-02-11 10:10:00'),
+('1aa9cfe1-5983-4e69-b836-f2dd09f29b7b',28498461,'Slight delay due to traffic.','Punctuality','2026-02-11 10:20:00'),
+('a1287b4e-2a85-444b-9813-c5a4759cce8c',28498439,'Comfortable seats.','Comfort','2026-02-11 10:30:00'),
+('f29f6565-5bc4-495a-9878-4b91b3b876c3',28498452,'Felt very secure.','Safety','2026-02-11 10:40:00'),
+('2b1c3ff3-e65b-40d9-baa2-a294f843e35d',28498447,'On-time departure.','Punctuality','2026-02-11 10:50:00'),
+('b83d9c8b-0278-4a57-9ba7-4b9673550776',28498459,'Great experience overall.',NULL,'2026-02-11 11:00:00'),
+('553aced0-6547-41e5-9aaa-26ddf8e769ed',28498442,'Driver was friendly.','Safety','2026-02-11 11:10:00'),
+('7dad019c-c58d-42db-be4f-9d7d794b57ed',28498464,'Ride was average.',NULL,'2026-02-11 11:20:00'),
+('7262c937-95e9-4526-9efc-1d2d65db305c',28498445,'Nice and comfortable ride.','Comfort','2026-02-12 10:00:00'),
+('b6facd13-306b-4a00-9ef0-da8c342217a1',28498449,'Driver arrived on time.','Punctuality','2026-02-12 10:10:00'),
+('4ced265c-6fa0-4485-a41c-267d1b8c52bf',28498447,'Felt very safe during ride.','Safety','2026-02-12 10:20:00'),
+('351d6041-9b8f-4b93-b3c8-613788d14dbe',28498443,'Smooth driving experience.',NULL,'2026-02-12 10:30:00'),
+('b673fea0-b774-41f3-9e76-2846183a7467',28498465,'Vehicle was clean and neat.','Comfort','2026-02-12 10:40:00');
 
--- INSERT INTO Feedback (RideID, MemberID, FeedbackText, FeedbackCategory, SubmittedAt) VALUES
--- (101, 2, 'Very smooth ride.', 'Comfort', '2026-02-11 09:00:00'),
--- (102, 3, 'Driver was punctual.', 'Punctuality', '2026-02-11 09:10:00'),
--- (103, 4, 'Felt safe throughout.', 'Safety', '2026-02-11 09:20:00'),
--- (104, 5, 'Car was clean.', 'Comfort', '2026-02-11 09:30:00'),
--- (105, 6, 'Reached on time.', 'Punctuality', '2026-02-11 09:40:00'),
--- (106, 7, 'Good driving skills.', 'Safety', '2026-02-11 09:50:00'),
--- (107, 8, 'AC was not working.', 'Comfort', '2026-02-11 10:00:00'),
--- (108, 9, 'Driver polite and helpful.', 'Safety', '2026-02-11 10:10:00'),
--- (109, 10, 'Slight delay due to traffic.', 'Punctuality', '2026-02-11 10:20:00'),
--- (110, 11, 'Comfortable seats.', 'Comfort', '2026-02-11 10:30:00'),
--- (111, 12, 'Felt very secure.', 'Safety', '2026-02-11 10:40:00'),
--- (112, 13, 'On-time departure.', 'Punctuality', '2026-02-11 10:50:00'),
--- (113, 14, 'Great experience overall.', NULL, '2026-02-11 11:00:00'),
--- (114, 15, 'Driver was friendly.', 'Safety', '2026-02-11 11:10:00'),
--- (115, 1, 'Ride was average.', NULL, '2026-02-11 11:20:00');
+-- BookingRequest
+INSERT INTO BookingRequests (RequestID, RideID, PassengerID, RequestStatus, RequestedAt) VALUES
+(1,'dd1ee643-2f02-4546-977c-bc55fd4b55ea',28498463,'PENDING','2026-02-09 08:00:00'),
+(2,'6e0180e5-20d9-4e12-872f-f6b45ef5cd82',28498446,'ACCEPTED','2026-02-09 08:10:00'),
+(3,'119fb431-101b-49d7-be17-92e9caab7c87',28498438,'REJECTED','2026-02-09 08:20:00'),
+(4,'c409227a-e96e-4444-8749-15c2bd03d2ae',28498455,'ACCEPTED','2026-02-09 08:30:00'),
+(5,'6f179c80-7958-4a77-b0fb-00d61de45087',28498445,'PENDING','2026-02-09 08:40:00'),
+(6,'bc1f49d4-f927-4adf-97a8-86c33187bf44',28498459,'ACCEPTED','2026-02-09 08:50:00'),
+(7,'9735ef94-75bf-49ed-bb07-953d50455b23',28498438,'REJECTED','2026-02-09 09:00:00'),
+(8,'4d54af73-b35e-4410-b352-f3eb42ebf559',28498438,'PENDING','2026-02-09 09:10:00'),
+(9,'1aa9cfe1-5983-4e69-b836-f2dd09f29b7b',28498461,'ACCEPTED','2026-02-09 09:20:00'),
+(10,'a1287b4e-2a85-444b-9813-c5a4759cce8c',28498439,'PENDING','2026-02-09 09:30:00'),
+(11,'f29f6565-5bc4-495a-9878-4b91b3b876c3',28498452,'REJECTED','2026-02-09 09:40:00'),
+(12,'2b1c3ff3-e65b-40d9-baa2-a294f843e35d',28498447,'ACCEPTED','2026-02-09 09:50:00'),
+(13,'b83d9c8b-0278-4a57-9ba7-4b9673550776',28498459,'PENDING','2026-02-09 10:00:00'),
+(14,'553aced0-6547-41e5-9aaa-26ddf8e769ed',28498442,'ACCEPTED','2026-02-09 10:10:00'),
+(15,'7dad019c-c58d-42db-be4f-9d7d794b57ed',28498464,'REJECTED','2026-02-09 10:20:00'),
+(16,'7262c937-95e9-4526-9efc-1d2d65db305c',28498445,'PENDING','2026-02-12 08:00:00'),
+(17,'b6facd13-306b-4a00-9ef0-da8c342217a1',28498449,'ACCEPTED','2026-02-12 08:10:00'),
+(18,'4ced265c-6fa0-4485-a41c-267d1b8c52bf',28498447,'REJECTED','2026-02-12 08:20:00'),
+(19,'351d6041-9b8f-4b93-b3c8-613788d14dbe',28498443,'PENDING','2026-02-12 08:30:00'),
+(20,'b673fea0-b774-41f3-9e76-2846183a7467',28498465,'ACCEPTED','2026-02-12 08:40:00');
 
-
--- INSERT INTO BookingRequest (RequestID, RideID, PassengerID, RequestStatus, RequestedAt) VALUES
--- (1, 101, 3, 'PENDING', '2026-02-09 08:00:00'),
--- (2, 101, 4, 'ACCEPTED', '2026-02-09 08:10:00'),
--- (3, 102, 5, 'REJECTED', '2026-02-09 08:20:00'),
--- (4, 103, 6, 'ACCEPTED', '2026-02-09 08:30:00'),
--- (5, 104, 7, 'PENDING', '2026-02-09 08:40:00'),
--- (6, 105, 8, 'ACCEPTED', '2026-02-09 08:50:00'),
--- (7, 106, 9, 'REJECTED', '2026-02-09 09:00:00'),
--- (8, 107, 10, 'PENDING', '2026-02-09 09:10:00'),
--- (9, 108, 11, 'ACCEPTED', '2026-02-09 09:20:00'),
--- (10, 109, 12, 'PENDING', '2026-02-09 09:30:00'),
--- (11, 110, 13, 'REJECTED', '2026-02-09 09:40:00'),
--- (12, 111, 14, 'ACCEPTED', '2026-02-09 09:50:00'),
--- (13, 112, 15, 'PENDING', '2026-02-09 10:00:00'),
--- (14, 113, 1, 'ACCEPTED', '2026-02-09 10:10:00'),
--- (15, 114, 2, 'REJECTED', '2026-02-09 10:20:00');
-
+-- MemberRatings
 INSERT INTO MemberRatings (RideID, SenderMemberID, ReceiverMemberID, Rating, RatingComment, RatedAt) VALUES ('5f2acb79-ebf8-49ef-8588-dd63706e769a', 28498438, 28498444, 4.7, 'Friendly and cooperative member.', '2026-02-15 01:24:17');
 INSERT INTO MemberRatings (RideID, SenderMemberID, ReceiverMemberID, Rating, RatingComment, RatedAt) VALUES ('5f2acb79-ebf8-49ef-8588-dd63706e769a', 28498442, 28498460, 3.2, 'Ride was fine, nothing to complain about.', '2026-02-15 01:24:17');
 INSERT INTO MemberRatings (RideID, SenderMemberID, ReceiverMemberID, Rating, RatingComment, RatedAt) VALUES ('5f2acb79-ebf8-49ef-8588-dd63706e769a', 28498440, 28498439, 3.1, 'Enjoyed the ride, thank you!', '2026-02-15 01:24:17');
