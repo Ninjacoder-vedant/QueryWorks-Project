@@ -72,6 +72,11 @@ VALUES
     (4, 'Sedan Cab', 4),
     (5, 'SUV Cab', 6),
     (6, 'Premium SUV', 7);
+    (7, 'Luxury Sedan', 4),
+    (8, 'Electric Cab', 4),
+    (9, 'Tempo Traveller', 12),
+    (10, 'Van Cab', 8),
+    (11, 'Shared Shuttle', 10);
 
 -- Active Rides
 INSERT INTO ActiveRides (RideID, AdminID, AvailableSeats, PassengerCount, Source, Destination, VehicleType, StartTime, EstimatedTime, FemaleOnly) VALUES ('dd1ee643-2f02-4546-977c-bc55fd4b55ea', 28498463, 1, 3, 'SVPI Airport', 'IIT Gandhinagar (Palaj)', 'Mini Cab', '2026-02-17 01:03:11', 74, TRUE);
@@ -195,6 +200,11 @@ INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('351d604
 INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('1aa9cfe1-5983-4e69-b836-f2dd09f29b7b', 28498451, 'Bad co passengers');
 INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('7dad019c-c58d-42db-be4f-9d7d794b57ed', 28498443, 'Plan Changed');
 INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('119fb431-101b-49d7-be17-92e9caab7c87', 28498448, 'Other private reasons');
+INSERT INTO Cancellation (RideID, MemberID, CancellationReason) VALUES ('b3b7e197-41bd-442c-b30e-94d2ed874009', 28498440, 'bad copassenger');
+INSERT INTO Cancellation (RideID, MemberID, CalncellationReason) VALUES ('bda24468-ca06-4713-988e-2f9e2cdaa500', 28498465,  'Plan Changed');
+INSERT INTO Cancellation (RideID, MemberID, CalncellationReason) VALUES ('b539a100-4699-41d7-bc48-892b1d89bad2', 28498452, 'Plan Changed');
+INSERT INTO Cancellation (RideID, MemberID, CalncellationReason) VALUES ('8f5dedd8-21b3-4a5d-a1cf-8bd93db74b8c', 28498439, 'Other private reasons');
+INSERT INTO Cancellation (RideID, MemberID, CalncellationReason) VALUES ('7bafd39b-6e2c-44fb-8b65-373ab4607608', 28498456,  'Other private reasons');
 
 Use rideshare;
 -- MessageHistory
