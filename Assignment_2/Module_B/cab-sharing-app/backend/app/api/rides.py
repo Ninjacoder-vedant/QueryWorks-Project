@@ -12,4 +12,3 @@ router = APIRouter(
 def read_rides(skip: int = 0, limit: int = 100, db: Session = Depends(database.get_db)):
     return db.query(models.ActiveRide).offset(skip).limit(limit).all()
 
-# ... other ride endpoints

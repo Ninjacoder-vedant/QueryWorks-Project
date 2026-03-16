@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from api import rides # requests  # Import from the api folder
+from api import rides # requests 
 
 app = FastAPI(title="IITGN RideShare Portal")
 
-# Include routers
+
 app.include_router(rides.router)
 # app.include_router(requests.router)
 

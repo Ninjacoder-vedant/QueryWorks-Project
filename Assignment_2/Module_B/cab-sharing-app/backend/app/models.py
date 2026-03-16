@@ -10,15 +10,13 @@ class Member(Base):
     Email = Column(String(100), unique=True, nullable=False)
     Programme = Column(String(50), nullable=False)
     Branch = Column(String(50))
-    BatchYear = Column(Integer, nullable=False)  # MySQL YEAR translates well to Integer
+    BatchYear = Column(Integer, nullable=False)  
     ContactNumber = Column(String(15), unique=True, nullable=False)
     Age = Column(Integer)
     Gender = Column(String(1))
 
-# In backend/app/models.py
 class ActiveRide(Base):
     __tablename__ = "ActiveRides"
-    # Match the varchar(50) from your DDL
     RideID = Column(String(50), primary_key=True) 
     AdminID = Column(Integer, ForeignKey("Members.MemberID"))
     AvailableSeats = Column(Integer, nullable=False)
