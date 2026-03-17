@@ -12,7 +12,6 @@ class RideBase(BaseModel):
 
 class RideCreate(RideBase):
     AdminID: int
-    PassengerCount: int
     EstimatedTime: int
 
 class RideOut(RideBase):
@@ -33,7 +32,7 @@ class MemberOut(BaseModel):
 class RideFull(BaseModel):
     RideID: str
     AdminID: int
-    AdminName: str | None   # 👈 NEW
+    AdminName: str | None  
     AvailableSeats: int
     PassengerCount: int
     Source: str

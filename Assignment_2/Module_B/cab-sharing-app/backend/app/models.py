@@ -9,6 +9,7 @@ class Member(Base):
     __tablename__ = "Members"
 
     MemberID = Column(Integer, primary_key=True, autoincrement=True)
+    GoogleSub = Column(String(255), unique=True, nullable=True)
     FullName = Column(String(100), nullable=False)
     ProfileImageURL = Column(String(255), default="default_avatar.png")
     Programme = Column(String(50), nullable=False)
@@ -47,7 +48,7 @@ class ActiveRide(Base):
     FemaleOnly = Column(Boolean, default=False)
     admin = relationship("Member")
 
-    passengers = relationship("RidePassengerMap", back_populates="ride")  # ✅ HERE
+    passengers = relationship("RidePassengerMap", back_populates="ride") 
 
     __table_args__ = (
         CheckConstraint('AvailableSeats >= 0'),
