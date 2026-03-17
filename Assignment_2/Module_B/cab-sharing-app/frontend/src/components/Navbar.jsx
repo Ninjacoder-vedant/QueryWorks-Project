@@ -46,7 +46,7 @@ const NavLink = ({ children, to }) => {
 export default function Navbar() {
   const navigate = useNavigate();
   // We can check localStorage directly here to keep the Navbar self-contained
-  const isLoggedIn = localStorage.getItem('isAuthenticated') === 'true'; 
+  const isLoggedIn = localStorage.getItem('isAuthenticated') === 'true';
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -56,7 +56,7 @@ export default function Navbar() {
   return (
     <Box bg={useColorModeValue('white', 'gray.900')} px={8} boxShadow="sm" borderBottom={1} borderStyle="solid" borderColor={useColorModeValue('gray.200', 'gray.700')}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        
+
         {/* Left Side: Logo and Navigation Links */}
         <HStack spacing={8} alignItems="center">
           <Box as={RouterLink} to={isLoggedIn ? "/available-rides" : "/login"}>
@@ -64,7 +64,7 @@ export default function Navbar() {
               CampusRide
             </Text>
           </Box>
-          
+
           {/* Only show these links if logged in */}
           {isLoggedIn && (
             <HStack as="nav" spacing={2} display={{ base: 'none', md: 'flex' }}>
@@ -87,7 +87,9 @@ export default function Navbar() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Profile</MenuItem>
+                <MenuItem onClick={() => navigate("/Profile")}>
+                  Profile
+                </MenuItem>
                 <MenuItem>Settings</MenuItem>
                 <MenuDivider />
                 <MenuItem onClick={handleLogout} color="red.500" fontWeight="semibold">

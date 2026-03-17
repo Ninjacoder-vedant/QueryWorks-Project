@@ -1,11 +1,13 @@
 import React from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'; 
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 // Import your components
 import Login from './pages/Login';
 import AvailableRides from './pages/AvailableRides';
 import PrivateRoute from './components/PrivateRoute';
-import Navbar from './components/Navbar'; 
+import Navbar from './components/Navbar';
+import Profile from './pages/Profile';
+
 
 function App() {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
@@ -42,6 +44,11 @@ function App() {
           }
         />
 
+        {/* Route for viewing YOUR OWN profile */}
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+
+        {/* Route for viewing SOMEONE ELSE'S profile (Notice the :id parameter) */}
+        <Route path="/profile/:id" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="*" element={<h2>404 - Page Not Found</h2>} />
       </Routes>
     </>
