@@ -21,3 +21,29 @@ class RideOut(RideBase):
     
     class Config:
         from_attributes = True
+
+class MemberOut(BaseModel):
+    MemberID: int
+    FullName: str
+
+    class Config:
+        from_attributes = True
+
+
+class RideFull(BaseModel):
+    RideID: str
+    AdminID: int
+    AdminName: str | None   # 👈 NEW
+    AvailableSeats: int
+    PassengerCount: int
+    Source: str
+    Destination: str
+    VehicleType: str
+    StartTime: datetime
+    EstimatedTime: int
+    FemaleOnly: bool
+
+    Passengers: list[MemberOut]
+
+    class Config:
+        from_attributes = True
