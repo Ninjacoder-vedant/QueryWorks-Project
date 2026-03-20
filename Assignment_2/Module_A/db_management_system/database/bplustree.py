@@ -12,6 +12,7 @@ Leaf nodes are connected as a doubly linked list for efficient range queries.
 
 import math
 import graphviz
+import os
 
 
 class Node:
@@ -297,6 +298,13 @@ class BPlusTree:
         if self.root:
             self._add_nodes(dot, self.root)
             self._add_edges(dot, self.root)
+
+        # create folder if not exists
+        os.makedirs("bplustree_images", exist_ok=True)
+
+        # prepend folder path
+        if not filename.startswith("bplustree_images"):
+            filename = os.path.join("bplustree_images", filename)
 
         dot.render(filename, cleanup=True)
         return dot
