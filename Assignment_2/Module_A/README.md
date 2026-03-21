@@ -30,6 +30,8 @@ Module_A/
 │   ├── bptree_images/           # Generated B+ Tree visualizations (PNG)
 │   │
 │   ├── report.ipynb             # Main report and demonstration notebook
+│   ├── performance_comparison.png
+│   ├── random_workload.png
 │   └── requirements.txt
 └── README.md
 ```
